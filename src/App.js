@@ -10,6 +10,10 @@ import CreateTodo from "./components/todos/create-todo.component";
 import EditTodo from "./components/todos/edit-todo.component";
 import TodosList from "./components/todos/todos-list.component";
 
+import CreateMudir from "./components/mudirs/create-mudir.component";
+import EditMudir from "./components/mudirs/edit-mudir.component";
+import MudirsList from "./components/mudirs/mudirs-list.component";
+
 import logo from "./logo.svg";
 
 class App extends Component {
@@ -28,7 +32,7 @@ class App extends Component {
                   <Link to="/todos" className="nav-link">Todos</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/mudir" className="nav-link">Mudir</Link>
+                  <Link to="/mudirs" className="nav-link">Mudir</Link>
                 </li>
               </ul>
             </div>
@@ -37,10 +41,13 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           
           <Route path="/todos" exact component={TodosList} />
-          <Route path="/edit/:id" component={EditTodo} />
-          <Route path="/create" component={CreateTodo} />
+          <Route path="/todos/edit/:id" component={EditTodo} />
+          <Route path="/todos/create" component={CreateTodo} />
 
-          <Route path="/mudir" exact component={TodosList} />
+          <Route path="/mudirs" exact component={MudirsList} />
+          <Route path="/mudirs/edit/:id" component={EditMudir} />
+          <Route path="/mudirs/create" component={CreateMudir} />
+
         </div>
       </Router>
     );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-export default class TodosList extends Component {
+export default class MudirsList extends Component {
 
     state = {
         todos: []
@@ -13,7 +13,7 @@ export default class TodosList extends Component {
     }
 
     getTodos = () => {
-        axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/todos/')
+        axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/mudirs/')
             .then(response => {
                 const todos = response.data.data;
                 this.setState({todos})
@@ -28,16 +28,18 @@ export default class TodosList extends Component {
     render() {
         return (
             <div>
-                <h3>Todos List</h3>
+                <h3>Daftar Mudir</h3>
                 <div className="collpase navbar-collapse">
-                    <Link to="/todos/create" className="nav-link">Create Todo</Link>
+                    <Link to="/mudirs/create" className="nav-link">Tambah Mudir</Link>
                 </div>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Responsible</th>
-                            <th>Priority</th>
+                            <th>Nama</th>
+                            <th>Tempat</th>
+                            <th>Tanggal</th>
+                            <th>Bulan</th>
+                            <th>Tahun</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -47,11 +49,13 @@ export default class TodosList extends Component {
                                 console.log(data)
                                 return (
                                     <tr key={i}>
-                                        <td>{data.todo_description}</td>
-                                        <td>{data.todo_responsible}</td>
-                                        <td>{data.todo_priority}</td>
+                                        <td>{data.nama}</td>
+                                        <td>{data.tempat_tanggal_lahir_tempat}</td>
+                                        <td>{data.tempat_tanggal_lahir_tgl}</td>
+                                        <td>{data.tempat_tanggal_lahir_bln}</td>
+                                        <td>{data.tempat_tanggal_lahir_tahun}</td>
                                         <td>
-                                            <Link to={"/todos/edit/"+data.id}>Edit</Link>
+                                            <Link to={"/mudirs/edit/"+data.id}>Edit</Link>
                                         </td>
                                         
                                     </tr>

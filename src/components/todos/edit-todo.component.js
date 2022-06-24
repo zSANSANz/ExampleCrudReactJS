@@ -24,10 +24,10 @@ export default class EditTodo extends Component {
         axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/todos/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    todo_description: response.data.data.todos.todo_description,
-                    todo_responsible: response.data.data.todos.todo_responsible,
-                    todo_priority: response.data.data.todos.todo_priority,
-                    todo_completed: response.data.data.todos.todo_completed
+                    todo_description: response.data.data.todo_description,
+                    todo_responsible: response.data.data.todo_responsible,
+                    todo_priority: response.data.data.todo_priority,
+                    todo_completed: response.data.data.todo_completed
                 })   
             })
             .catch(function (error) {
@@ -71,7 +71,7 @@ export default class EditTodo extends Component {
         axios.put('https://rumahbelajaribnuabbas-api.herokuapp.com/todos/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
-        this.props.history.push('/');
+        this.props.history.push('/todos');
     }
 
     render() {
