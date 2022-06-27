@@ -13,6 +13,7 @@ import TodosList from "./components/todos/todos-list.component";
 import CreateMudir from "./components/mudirs/create-mudir.component";
 import DetailMudir from "./components/mudirs/detail-mudir.component";
 import EditMudir from "./components/mudirs/edit-mudir.component";
+import DeleteMudir from "./components/mudirs/delete-mudir.component";
 import MudirsList from "./components/mudirs/mudirs-list.component";
 
 import logo from "./logo.svg";
@@ -48,6 +49,7 @@ class App extends Component {
           <Route path="/mudirs" exact component={MudirsList} />
           <Route path="/mudirs/detail/:id" component={DetailMudir} />
           <Route path="/mudirs/edit/:id" component={EditMudir} />
+          <Route path="/mudirs/delete/:id" component={DeleteMudir} />
           <Route path="/mudirs/create" component={CreateMudir} />
 
         </div>

@@ -30,7 +30,7 @@ export default class MudirsList extends Component {
             <div>
                 <h3>Daftar Mudir</h3>
                 <div className="collpase navbar-collapse">
-                    <Link to="/mudirs/create" className="nav-link">Tambah Mudir</Link>
+                    <Link to="/mudirs/create"  className="btn btn-primary" >Tambah Mudir</Link>
                 </div>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
@@ -49,9 +49,11 @@ export default class MudirsList extends Component {
                                         <td>{data.nama}</td>
                                         <td>{data.tempat_tanggal_lahir_tempat}</td>
                                         <td>
-                                            <Link to={"/mudirs/detail/"+data.id}>Detail</Link>
+                                            <Link  className="btn btn-info" to={"/mudirs/detail/"+data.id}>Detail</Link>
                                             &nbsp;
-                                            <Link to={"/mudirs/edit/"+data.id}>Edit</Link>
+                                            <Link  className="btn btn-success" to={"/mudirs/edit/"+data.id}>Edit</Link>
+                                            &nbsp;
+                                            <Link  className="btn btn-danger" to={"/mudirs/delete/"+data.id}>Delete</Link>
                                         </td>
                                         
                                     </tr>
