@@ -101,7 +101,7 @@ export default class DetailMudir extends Component {
                                 className="form-control"
                                 value={this.state.nama}
                                 onChange={this.onChangeMudirNama}
-                                />
+                                disabled />
                     </div>
                     <div className="form-group">
                         <label>Tempat Lahir: </label>
@@ -110,7 +110,7 @@ export default class DetailMudir extends Component {
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_tempat}
                                 onChange={this.onChangeMudirTempatLahir}
-                                />
+                                disabled />
                     </div>
                     <div className="form-group">
                         <label>Tanggal Lahir: </label>
@@ -119,7 +119,7 @@ export default class DetailMudir extends Component {
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_tgl}
                                 onChange={this.onChangeMudirTanggalLahir}
-                                />
+                                disabled />
                     </div>
                     <div className="form-group">
                         <label>Bulan Lahir: </label>
@@ -128,7 +128,7 @@ export default class DetailMudir extends Component {
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_bln}
                                 onChange={this.onChangeMudirBulanLahir}
-                                />
+                                disabled />
                     </div>
                     <div className="form-group">
                         <label>Tahun Lahir: </label>
@@ -137,7 +137,7 @@ export default class DetailMudir extends Component {
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_tahun}
                                 onChange={this.onChangeMudirTahunLahir}
-                                />
+                                disabled />
                     </div>
                     <div className="form-group">
                         <label>Keluar: </label>
@@ -146,7 +146,7 @@ export default class DetailMudir extends Component {
                                 className="form-control"
                                 value={this.state.keluar}
                                 onChange={this.onChangeKeluar}
-                                />
+                                disabled />
                     </div>
                     <div className="form-group">
                         <label>Created At: </label>
@@ -155,7 +155,7 @@ export default class DetailMudir extends Component {
                                 className="form-control"
                                 value={this.state.created_at}
                                 onChange={this.onChangeCreatedAt}
-                                />
+                                disabled />
                     </div>
 
                     <br />

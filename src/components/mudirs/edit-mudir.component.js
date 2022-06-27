@@ -169,7 +169,7 @@ export default class EditMudir extends Component {
                                 className="form-control"
                                 value={this.state.created_at}
                                 onChange={this.onChangeCreatedAt}
-                                />
+                                disabled />
                     </div>
 
                     <br />

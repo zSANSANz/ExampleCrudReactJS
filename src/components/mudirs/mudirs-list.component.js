@@ -36,10 +36,7 @@ export default class MudirsList extends Component {
                     <thead>
                         <tr>
                             <th>Nama</th>
-                            <th>Tempat</th>
-                            <th>Tanggal</th>
-                            <th>Bulan</th>
-                            <th>Tahun</th>
+                            <th>Asal</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -51,9 +48,6 @@ export default class MudirsList extends Component {
                                     <tr key={i}>
                                         <td>{data.nama}</td>
                                         <td>{data.tempat_tanggal_lahir_tempat}</td>
-                                        <td>{data.tempat_tanggal_lahir_tgl}</td>
-                                        <td>{data.tempat_tanggal_lahir_bln}</td>
-                                        <td>{data.tempat_tanggal_lahir_tahun}</td>
                                         <td>
                                             <Link to={"/mudirs/detail/"+data.id}>Detail</Link>
                                             &nbsp;

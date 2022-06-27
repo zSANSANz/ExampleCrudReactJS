@@ -26,7 +26,7 @@ class App extends Component {
             <a className="navbar-brand" href="#" target="_blank">
               <img src={logo} width="30" height="30" alt="rumahbelajar" />
             </a>
-            <Link to="/" className="navbar-brand">Sistem Informasi Rumah Belajar </Link>
+            <Link to="/" className="navbar-brand">Rumah Belajar </Link>
             <div className="collpase navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
