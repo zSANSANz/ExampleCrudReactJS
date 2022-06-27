@@ -55,6 +55,8 @@ export default class MudirsList extends Component {
                                         <td>{data.tempat_tanggal_lahir_bln}</td>
                                         <td>{data.tempat_tanggal_lahir_tahun}</td>
                                         <td>
+                                            <Link to={"/mudirs/detail/"+data.id}>Detail</Link>
+                                            &nbsp;
                                             <Link to={"/mudirs/edit/"+data.id}>Edit</Link>
                                         </td>
                                         

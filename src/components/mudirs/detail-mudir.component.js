@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class EditMudir extends Component {
+export default class DetailMudir extends Component {
 
     constructor(props) {
         super(props);
@@ -87,27 +87,13 @@ export default class EditMudir extends Component {
     }
     
     onSubmit(e) {
-        e.preventDefault();
-        const obj = {
-            nama: this.state.nama,
-            tempat_tanggal_lahir_tempat: this.state.tempat_tanggal_lahir_tempat,
-            tempat_tanggal_lahir_tgl: this.state.tempat_tanggal_lahir_tgl,
-            tempat_tanggal_lahir_bln: this.state.tempat_tanggal_lahir_bln,
-            tempat_tanggal_lahir_tahun: this.state.tempat_tanggal_lahir_tahun,
-            keluar: this.state.keluar,
-            created_at: this.state.created_at
-        };
-        console.log(obj);
-        axios.put('https://rumahbelajaribnuabbas-api.herokuapp.com/mudirs/'+this.props.match.params.id, obj)
-            .then(res => console.log(res.data));
-        
         this.props.history.push('/mudirs');
     }
 
     render() {
         return (
             <div>
-                <h3 align="center">Edit</h3>
+                <h3 align="center">Detail</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>Nama: </label>
@@ -175,7 +161,7 @@ export default class EditMudir extends Component {
                     <br />
 
                     <div className="form-group">
-                        <input type="submit" value="Update Mudir" className="btn btn-primary" />
+                        <input type="submit" value="Back" className="btn btn-primary" />
                     </div>
                 </form>
             </div>
