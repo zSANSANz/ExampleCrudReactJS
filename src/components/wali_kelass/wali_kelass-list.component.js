@@ -49,11 +49,11 @@ export default class WaliKelassList extends Component {
                                         <td>{data.nama}</td>
                                         <td>{data.kelas}</td>
                                         <td>
-                                            <Link  className="btn btn-info btn-xs" to={"/wali_kelasss/detail/"+data.id}>Detail</Link>
+                                            <Link  className="btn btn-info btn-xs" to={"/wali_kelass/detail/"+data.id}>Detail</Link>
                                             &nbsp;
-                                            <Link  className="btn btn-success btn-xs" to={"/wali_kelasss/edit/"+data.id}>Edit</Link>
+                                            <Link  className="btn btn-success btn-xs" to={"/wali_kelass/edit/"+data.id}>Edit</Link>
                                             &nbsp;
-                                            <Link  className="btn btn-danger btn-xs" to={"/wali_kelasss/delete/"+data.id}>Delete</Link>
+                                            <Link  className="btn btn-danger btn-xs" to={"/wali_kelass/delete/"+data.id}>Delete</Link>
                                         </td>
                                         
                                     </tr>

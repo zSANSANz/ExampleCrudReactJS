@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class EditMudir extends Component {
+export default class EditWaliKelas extends Component {
 
     constructor(props) {
         super(props);
 
-        this.onChangeMudirNama = this.onChangeMudirNama.bind(this);
-        this.onChangeMudirTempatLahir = this.onChangeMudirTempatLahir.bind(this);
-        this.onChangeMudirTanggalLahir = this.onChangeMudirTanggalLahir.bind(this);
-        this.onChangeMudirBulanLahir = this.onChangeMudirBulanLahir.bind(this);
-        this.onChangeMudirTahunLahir = this.onChangeMudirTahunLahir.bind(this);
+        this.onChangeWaliKelasNama = this.onChangeWaliKelasNama.bind(this);
+        this.onChangeWaliKelasTempatLahir = this.onChangeWaliKelasTempatLahir.bind(this);
+        this.onChangeWaliKelasTanggalLahir = this.onChangeWaliKelasTanggalLahir.bind(this);
+        this.onChangeWaliKelasBulanLahir = this.onChangeWaliKelasBulanLahir.bind(this);
+        this.onChangeWaliKelasTahunLahir = this.onChangeWaliKelasTahunLahir.bind(this);
         this.onChangeKeluar = this.onChangeKeluar.bind(this);
-        this.onChangeCreatedAt = this.onChangeCreatedAt.bind(this);
+        this.onChangeKelas = this.onChangeKelas.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -22,12 +22,13 @@ export default class EditMudir extends Component {
             tempat_tanggal_lahir_bln: '',
             tempat_tanggal_lahir_tahun: '',
             keluar: '',
+            kelas: '',
             created_at: ''
         }
     }
 
     componentDidMount() {
-        axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/mudirs/'+this.props.match.params.id)
+        axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/wali_kelass/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     nama: response.data.data.nama,
@@ -37,6 +38,7 @@ export default class EditMudir extends Component {
                     tempat_tanggal_lahir_tahun: response.data.data.tempat_tanggal_lahir_tahun,
                     keluar: response.data.data.keluar,
                     created_at: response.data.data.created_at,
+                    kelas: response.data.data.kelas,
                 })   
             })
             .catch(function (error) {
@@ -44,31 +46,31 @@ export default class EditMudir extends Component {
             })
     }
 
-    onChangeMudirNama(e) {
+    onChangeWaliKelasNama(e) {
         this.setState({
             nama: e.target.value
         });
     }
 
-    onChangeMudirTempatLahir(e) {
+    onChangeWaliKelasTempatLahir(e) {
         this.setState({
             tempat_tanggal_lahir_tempat: e.target.value
         });
     }
 
-    onChangeMudirTanggalLahir(e) {
+    onChangeWaliKelasTanggalLahir(e) {
         this.setState({
             tempat_tanggal_lahir_tgl: e.target.value
         });
     }
 
-    onChangeMudirBulanLahir(e) {
+    onChangeWaliKelasBulanLahir(e) {
         this.setState({
             tempat_tanggal_lahir_bln: e.target.value
         });
     }
 
-    onChangeMudirTahunLahir(e) {
+    onChangeWaliKelasTahunLahir(e) {
         this.setState({
             tempat_tanggal_lahir_tahun: e.target.value
         });
@@ -77,6 +79,12 @@ export default class EditMudir extends Component {
     onChangeKeluar(e) {
         this.setState({
             keluar: e.target.value
+        });
+    }
+
+    onChangeKelas(e) {
+        this.setState({
+            kelas: e.target.value
         });
     }
 
@@ -95,13 +103,14 @@ export default class EditMudir extends Component {
             tempat_tanggal_lahir_bln: this.state.tempat_tanggal_lahir_bln,
             tempat_tanggal_lahir_tahun: this.state.tempat_tanggal_lahir_tahun,
             keluar: this.state.keluar,
+            kelas: this.state.kelas,
             created_at: this.state.created_at
         };
         console.log(obj);
-        axios.put('https://rumahbelajaribnuabbas-api.herokuapp.com/mudirs/'+this.props.match.params.id, obj)
+        axios.put('https://rumahbelajaribnuabbas-api.herokuapp.com/wali_kelass/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
-        this.props.history.push('/mudirs');
+        this.props.history.push('/wali_kelass');
     }
 
     render() {
@@ -109,12 +118,20 @@ export default class EditMudir extends Component {
             <div>
                 <h3 align="center">Edit</h3>
                 <form onSubmit={this.onSubmit}>
+                <div className="form-group"> 
+                        <label>Kelas: </label>
+                        <input  type="text"
+                                className="form-control"
+                                value={this.state.kelas}
+                                onChange={this.onChangeKelas}
+                                />
+                    </div>
                     <div className="form-group"> 
                         <label>Nama: </label>
                         <input  type="text"
                                 className="form-control"
                                 value={this.state.nama}
-                                onChange={this.onChangeMudirNama}
+                                onChange={this.onChangeWaliKelasNama}
                                 />
                     </div>
                     <div className="form-group">
@@ -123,7 +140,7 @@ export default class EditMudir extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_tempat}
-                                onChange={this.onChangeMudirTempatLahir}
+                                onChange={this.onChangeWaliKelasTempatLahir}
                                 />
                     </div>
                     <div className="form-group">
@@ -132,7 +149,7 @@ export default class EditMudir extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_tgl}
-                                onChange={this.onChangeMudirTanggalLahir}
+                                onChange={this.onChangeWaliKelasTanggalLahir}
                                 />
                     </div>
                     <div className="form-group">
@@ -141,7 +158,7 @@ export default class EditMudir extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_bln}
-                                onChange={this.onChangeMudirBulanLahir}
+                                onChange={this.onChangeWaliKelasBulanLahir}
                                 />
                     </div>
                     <div className="form-group">
@@ -150,7 +167,7 @@ export default class EditMudir extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.tempat_tanggal_lahir_tahun}
-                                onChange={this.onChangeMudirTahunLahir}
+                                onChange={this.onChangeWaliKelasTahunLahir}
                                 />
                     </div>
                     <div className="form-group">

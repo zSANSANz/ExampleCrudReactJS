@@ -123,7 +123,7 @@ export default class CreateWaliKelas extends Component {
                         <label>Nama: </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.wali_kelas_nama}
+                                value={this.state.nama}
                                 onChange={this.onChangeWaliKelasNama}
                                 />
                     </div>
