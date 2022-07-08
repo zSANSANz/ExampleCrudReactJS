@@ -21,6 +21,12 @@ import EditWaliKelas from "./components/wali_kelass/edit-wali_kelas.component";
 import DeleteWaliKelas from "./components/wali_kelass/delete-wali_kelas.component";
 import WaliKelassList from "./components/wali_kelass/wali_kelass-list.component";
 
+import CreateSemester from "./components/semesters/create-semester.component";
+import DetailSemester from "./components/semesters/detail-semester.component";
+import EditSemester from "./components/semesters/edit-semester.component";
+import DeleteSemester from "./components/semesters/delete-semester.component";
+import SemestersList from "./components/semesters/semesters-list.component";
+
 import logo from "./logo.svg";
 
 class App extends Component {
@@ -44,6 +50,9 @@ class App extends Component {
                 <li className="navbar-item">
                   <Link to="/wali_kelass" className="nav-link">Wali Kelas</Link>
                 </li>
+                <li className="navbar-item">
+                  <Link to="/semesters" className="nav-link">Semester</Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -66,6 +75,11 @@ class App extends Component {
           <Route path="/wali_kelass/delete/:id" component={DeleteWaliKelas} />
           <Route path="/wali_kelass/create" component={CreateWaliKelas} />
           
+          <Route path="/semesters" exact component={SemestersList} />
+          <Route path="/semesters/detail/:id" component={DetailSemester} />
+          <Route path="/semesters/edit/:id" component={EditSemester} />
+          <Route path="/semesters/delete/:id" component={DeleteSemester} />
+          <Route path="/semesters/create" component={CreateSemester} />
         </div>
       </Router>
     );
