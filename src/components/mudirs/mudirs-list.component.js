@@ -5,19 +5,19 @@ import axios from 'axios';
 export default class MudirsList extends Component {
 
     state = {
-        todos: []
+        mudirs: []
     }
 
     componentDidMount() {
-        this.getTodos()
+        this.getMudirs()
     }
 
-    getTodos = () => {
+    getMudirs = () => {
         axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/mudirs/')
             .then(response => {
-                const todos = response.data.data;
-                this.setState({todos})
-                // console.log(todos)
+                const mudirs = response.data.data;
+                this.setState({mudirs})
+                // console.log(mudirs)
                 // console.log(response)
             })
             .catch(function (error){
@@ -42,7 +42,7 @@ export default class MudirsList extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.todos.map((data, i) => {
+                            this.state.mudirs.map((data, i) => {
                                 console.log(data)
                                 return (
                                     <tr key={i}>

@@ -5,19 +5,19 @@ import axios from 'axios';
 export default class WaliKelassList extends Component {
 
     state = {
-        todos: []
+        semesters: []
     }
 
     componentDidMount() {
-        this.getTodos()
+        this.getSemesters()
     }
 
-    getTodos = () => {
+    getSemesters = () => {
         axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/wali_kelass/')
             .then(response => {
-                const todos = response.data.data;
-                this.setState({todos})
-                // console.log(todos)
+                const semesters = response.data.data;
+                this.setState({semesters})
+                // console.log(semesters)
                 // console.log(response)
             })
             .catch(function (error){
@@ -42,7 +42,7 @@ export default class WaliKelassList extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.todos.map((data, i) => {
+                            this.state.semesters.map((data, i) => {
                                 console.log(data)
                                 return (
                                     <tr key={i}>

@@ -9,15 +9,15 @@ export default class SemestersList extends Component {
     }
 
     componentDidMount() {
-        this.getTodos()
+        this.getSemesters()
     }
 
-    getTodos = () => {
+    getSemesters = () => {
         axios.get('https://rumahbelajaribnuabbas-api.herokuapp.com/semesters/')
             .then(response => {
                 const semesters = response.data.data;
                 this.setState({semesters})
-                // console.log(todos)
+                // console.log(semesters)
                 // console.log(response)
             })
             .catch(function (error){
