@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/home.component";
@@ -27,12 +26,24 @@ import EditSemester from "./components/semesters/edit-semester.component";
 import DeleteSemester from "./components/semesters/delete-semester.component";
 import SemestersList from "./components/semesters/semesters-list.component";
 
+import Dashboard from './components/Dashboard/Dashboard';
+import Preferences from './components/Preferences/Preferences';
+
+import Login from './components/Login/Login';
+
 import logo from "./logo.svg";
 
-class App extends Component {
-  render() {
+function App() {
+  const [token, setToken] = useState();
+
+    if(!token) {
+      return <Login setToken={setToken} />
+    }
+
     return (
+      
       <Router>
+        
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#" target="_blank">
@@ -80,10 +91,19 @@ class App extends Component {
           <Route path="/semesters/edit/:id" component={EditSemester} />
           <Route path="/semesters/delete/:id" component={DeleteSemester} />
           <Route path="/semesters/create" component={CreateSemester} />
+          
+          <Switch>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/preferences">
+              <Preferences />
+            </Route>
+          </Switch>
         </div>
       </Router>
     );
-  }
+  
 }
 
 export default App;
