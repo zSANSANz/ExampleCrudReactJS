@@ -33,18 +33,8 @@ import Login from './components/Login/Login';
 
 import logo from "./logo.svg";
 
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
-
 function App() {
-  const token = getToken();
+    const [token, setToken] = useState();
 
     if(!token) {
       return <Login setToken={setToken} />
