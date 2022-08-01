@@ -26,6 +26,9 @@ import EditSemester from "./components/semesters/edit-semester.component";
 import DeleteSemester from "./components/semesters/delete-semester.component";
 import SemestersList from "./components/semesters/semesters-list.component";
 
+import CreateNilaiHead from "./components/nilai_heads/create-nilai_head.component";
+import NilaiHeadsList from "./components/nilai_heads/nilai_heads-list.component";
+
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 
@@ -36,9 +39,9 @@ import logo from "./logo.svg";
 function App() {
     const [token, setToken] = useState();
 
-    if(!token) {
-      return <Login setToken={setToken} />
-    }
+    // if(!token) {
+    //   return <Login setToken={setToken} />
+    // }
 
     return (
       
@@ -63,6 +66,9 @@ function App() {
                 </li>
                 <li className="navbar-item">
                   <Link to="/semesters" className="nav-link">Semester</Link>
+                </li>
+                <li className="navbar-item">
+                  <Link to="/nilai_heads" className="nav-link">Nilai Heads</Link>
                 </li>
               </ul>
             </div>
@@ -91,6 +97,9 @@ function App() {
           <Route path="/semesters/edit/:id" component={EditSemester} />
           <Route path="/semesters/delete/:id" component={DeleteSemester} />
           <Route path="/semesters/create" component={CreateSemester} />
+
+          <Route path="/nilai_heads" exact component={NilaiHeadsList} />
+          <Route path="/nilai_heads/create" component={CreateNilaiHead} />
           
           <Switch>
             <Route path="/dashboard">
