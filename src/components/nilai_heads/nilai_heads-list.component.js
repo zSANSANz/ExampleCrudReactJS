@@ -69,11 +69,7 @@ export default class NilaiHeadsList extends Component {
                                         { data.nilai_bobot }
                                     </td>
                                     <td>
-                                        <Link className="btn btn-info" to={"/nilai_heads/detail/"+data.id}>Detail</Link>
-                                        &nbsp;
-                                        <Link className="btn btn-success" to={"/nilai_heads/edit/"+data.id}>Edit</Link>
-                                        &nbsp;
-                                        <Link className="btn btn-danger" to={"/nilai_heads/delete/"+data.id}>Delete</Link>
+                                    
                                     </td>
                                 </tr>
                             )

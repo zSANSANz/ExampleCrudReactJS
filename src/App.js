@@ -29,6 +29,9 @@ import SemestersList from "./components/semesters/semesters-list.component";
 import CreateNilaiHead from "./components/nilai_heads/create-nilai_head.component";
 import NilaiHeadsList from "./components/nilai_heads/nilai_heads-list.component";
 
+import CreateNilaiImtihanChild from "./components/nilai_imtihan_childs/create-nilai_imtihan_child.component"
+import NilaiImtihanChildsList from "./components/nilai_imtihan_childs/nilai_imtihan_childs-list.component";
+
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 
@@ -70,6 +73,9 @@ function App() {
                 <li className="navbar-item">
                   <Link to="/nilai_heads" className="nav-link">Nilai Heads</Link>
                 </li>
+                <li className="navbar-item">
+                  <Link to="/nilai_imtihan_childs" className="nav-link">Nilai Imtihan Childs</Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -100,6 +106,9 @@ function App() {
 
           <Route path="/nilai_heads" exact component={NilaiHeadsList} />
           <Route path="/nilai_heads/create" component={CreateNilaiHead} />
+
+          <Route path="/nilai_imtihan_childs" exact component={NilaiImtihanChildsList} />
+          <Route path="/nilai_imtihan_childs/create" component={CreateNilaiImtihanChild} />
           
           <Switch>
             <Route path="/dashboard">
